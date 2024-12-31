@@ -1,0 +1,41 @@
+
+*,body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#balloon-container {
+  overflow: hidden;
+}
+
+.balloon {
+  position: absolute;
+  bottom: -100px;
+  width: 30px;
+  height: 40px;
+  background-color: #ff6347;
+  border-radius: 50%;
+  animation: float 6s infinite ease-in;
+}
+
+.balloon::before {
+  content: '';
+  position: absolute;
+  top: 30px;
+  left: 10px;
+  width: 10px;
+  height: 20px;
+  background: #d3d3d3;
+  border-radius: 2px;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-110vh);
+    opacity: 0;
+  }
+}
